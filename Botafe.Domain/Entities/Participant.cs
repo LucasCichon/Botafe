@@ -14,6 +14,7 @@ namespace Botafe.Domain.Entities
         public ParticipantName ParticipantName { get; set; }
         public Email Email { get; set; }
         public string PhoneNumber { get; set; }
+        public int ParticipantAddressId { get; set; }
         public ParticipantAddress ParticipantAddress { get; set; }
         public List<Enrollment> Enrollments { get; set; } = new();
     }

@@ -12,7 +12,5 @@ namespace Botafe.Domain.Entities
     {
         public int Id { get; set; }
         public Address Address { get; set; }
-        public int ParticipantId { get; set; }
-        public Participant Participant { get; set; }
     }
 }

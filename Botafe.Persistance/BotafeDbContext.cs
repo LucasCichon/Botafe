@@ -1,19 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using Botafe.Domain.Common;
+using Botafe.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Botafe.Persistance
 {
-    public class EventDbContext : DbContext
+    public class BotafeDbContext : DbContext
     {
-        public EventDbContext(DbContextOptions<EventDbContext> options) : base(options)
+        public BotafeDbContext(DbContextOptions<BotafeDbContext> options) : base(options)
         {
                 
         }
+
+        public DbSet<Event> Events { get; set; }
+        public DbSet<EventOwner> EventOwners { get; set; }
+        public DbSet<Participant> Participants { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.SeedData();
+        }
+
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {

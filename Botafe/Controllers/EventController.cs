@@ -6,9 +6,9 @@ namespace Botafe.Api.Controllers
     [ApiController]
     public class EventController : ControllerBase
     {
-        public IActionResult Index()
+        public string Index()
         {
-            return View();
+            return "Hello from event controller";
         }
     }
 }

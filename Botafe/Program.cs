@@ -1,4 +1,5 @@
 
+using Botafe.Persistance;
 using Microsoft.OpenApi.Models;
 using Path = System.IO.Path;
 
@@ -11,7 +12,7 @@ namespace Botafe
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.AddPersistance(builder.Configuration);
             builder.Services.AddCors(options => options.AddPolicy(name: "MyAllowSpecificOrigins",
                 builder =>
                 {

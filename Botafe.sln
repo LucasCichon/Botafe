@@ -3,9 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-<<<<<<< HEAD
-Global
-=======
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Botafe.Api", "Botafe\Botafe.Api.csproj", "{033EF0C2-BC85-4EB9-84E3-80B0341ED324}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5DA569E1-5C5C-4159-A26D-F17DA88316A4}"

@@ -1,0 +1,23 @@
+﻿@using BotafeFront.Models
+<h3>EventOwnersTable</h3>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Full Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var eventOwner in EventOwners)
+    {
+        <tr>
+            <td>@eventOwner.FullName</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public List<EventOwnerDto> EventOwners { get; set; }
+}

@@ -11,15 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{4AC50CDB-41DF-4C93-B944-3F0F8C5097DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botafe.Application", "Botafe.Application\Botafe.Application.csproj", "{FAAA5EB6-012F-4BFC-9512-FEBAA78A07C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Botafe.Application", "Botafe.Application\Botafe.Application.csproj", "{FAAA5EB6-012F-4BFC-9512-FEBAA78A07C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botafe.Common", "Botafe.Common\Botafe.Common.csproj", "{E50E8F7C-AD2D-44A9-9A6F-548C0A1E1BE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Botafe.Common", "Botafe.Common\Botafe.Common.csproj", "{E50E8F7C-AD2D-44A9-9A6F-548C0A1E1BE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botafe.Domain", "Botafe.Domain\Botafe.Domain.csproj", "{9EB79DCF-D742-4DA5-AC51-D83440E4C956}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Botafe.Domain", "Botafe.Domain\Botafe.Domain.csproj", "{9EB79DCF-D742-4DA5-AC51-D83440E4C956}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botafe.Infrastructure", "Botafe.Infrastructure\Botafe.Infrastructure.csproj", "{90EC09FC-80EF-479F-980A-B9352CC7BAE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Botafe.Infrastructure", "Botafe.Infrastructure\Botafe.Infrastructure.csproj", "{90EC09FC-80EF-479F-980A-B9352CC7BAE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botafe.Persistance", "Botafe.Persistance\Botafe.Persistance.csproj", "{3B7085B0-3E0A-493E-8215-6EDDDE624134}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Botafe.Persistance", "Botafe.Persistance\Botafe.Persistance.csproj", "{3B7085B0-3E0A-493E-8215-6EDDDE624134}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotafeFront", "BotafeFront\BotafeFront.csproj", "{66799B12-2145-4CED-8E33-2E31994869D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,8 +53,11 @@ Global
 		{3B7085B0-3E0A-493E-8215-6EDDDE624134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B7085B0-3E0A-493E-8215-6EDDDE624134}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B7085B0-3E0A-493E-8215-6EDDDE624134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66799B12-2145-4CED-8E33-2E31994869D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66799B12-2145-4CED-8E33-2E31994869D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66799B12-2145-4CED-8E33-2E31994869D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66799B12-2145-4CED-8E33-2E31994869D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
->>>>>>> 1cedd813904e4ff24c7e9223dca0d2aa07a4f961
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
@@ -63,6 +68,7 @@ Global
 		{9EB79DCF-D742-4DA5-AC51-D83440E4C956} = {5DA569E1-5C5C-4159-A26D-F17DA88316A4}
 		{90EC09FC-80EF-479F-980A-B9352CC7BAE1} = {B7A0B3E4-B161-452F-B80E-96169E995FD6}
 		{3B7085B0-3E0A-493E-8215-6EDDDE624134} = {B7A0B3E4-B161-452F-B80E-96169E995FD6}
+		{66799B12-2145-4CED-8E33-2E31994869D0} = {4AC50CDB-41DF-4C93-B944-3F0F8C5097DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EBE67010-6CD2-40D6-A4E8-EB6DE3E9EC83}

@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Botafe.Application\Botafe.Application.csproj" />
     <ProjectReference Include="..\Botafe.Domain\Botafe.Domain.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,8 @@
 
+using Botafe.Persistance;
+using Microsoft.OpenApi.Models;
+using Path = System.IO.Path;
+
 namespace Botafe
 {
     public class Program
@@ -8,11 +12,18 @@ namespace Botafe
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddPersistance(builder.Configuration);
+            builder.Services.AddCors(options => options.AddPolicy(name: "MyAllowSpecificOrigins",
+                builder =>
+                {
+                    builder.WithOrigins("https://localhost:44376");
+                }));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen(c => c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo {Title= "Botafe", Version = "v1"}));
+            builder.Services.AddSwaggerGen(c => SwaggerDocExtensions.SetSwaggerDoc(c));
+            builder.Services.AddHealthChecks();
 
             var app = builder.Build();
 
@@ -23,10 +34,13 @@ namespace Botafe
                 app.UseSwaggerUI();
             }
 
+            app.UseHealthChecks("/hc");
+
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseCors();
 
+            app.UseAuthorization();
 
             app.MapControllers();
 

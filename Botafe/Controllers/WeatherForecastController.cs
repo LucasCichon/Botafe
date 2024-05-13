@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Botafe.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [EnableCors("MyAllowSpecificOrigins")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -18,7 +20,13 @@ namespace Botafe.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        /// <summary>
+        /// Get weather forecast
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

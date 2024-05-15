@@ -1,0 +1,21 @@
+﻿@page "/eventOwner"
+@using BotafeFront.Models
+@inject HttpClient Http
+
+<h3>EventOwners Detail</h3>
+<div class="card" style="width:18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@eventOwner.FirstName @eventOwner.LastName</h5>
+        <p class="card-text">@eventOwner.Email</p>
+        <a href="#" class="btn btn-primary">Edit or something</a>
+    </div>
+</div>
+
+@code {
+    private EventOwnerDetailVm eventOwner;
+
+    protected override async Task OnInitializedAsync()
+    {
+        eventOwner = await Http.GetFromJsonAsync<EventOwnerDetailVm>("https://localhost:44322/api/eventOwner");
+    }
+}

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Botafe.Persistance
 {
-    public class BotafeDbContext : DbContext
+    public class BotafeDbContext : DbContext, IBotafeDbContext
     {
         private readonly IDateTime _dateTime;
 

@@ -6,6 +6,10 @@ namespace Botafe.Api.Controllers
     [ApiController]
     public class EnrollmentController : ControllerBase
     {
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         public string Index()
         {
             return "Hello from enrollmentController";

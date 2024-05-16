@@ -1,0 +1,23 @@
+﻿@page "/eventOwners"
+@using BotafeFront.Models
+@using BotafeFront.Components
+
+
+<h1>Event Owners list</h1>
+<a href="addEventOwner">Add new</a>
+
+<EventOwnersTable EventOwners="@eventOwners"></EventOwnersTable>
+
+@code {
+    private List<EventOwnerDto> eventOwners;
+
+    protected override async Task OnInitializedAsync()
+    {
+        eventOwners = new List<EventOwnerDto>()
+        {
+            new EventOwnerDto() { FullName = "Łukasz Cichon" },
+            new EventOwnerDto() { FullName = "Łukasz Knieć" }
+        };
+    }
+
+}

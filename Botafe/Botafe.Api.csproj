@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Botafe.Infrastructure\Botafe.Infrastructure.csproj" />
     <ProjectReference Include="..\Botafe.Persistance\Botafe.Persistance.csproj" />
+    <ProjectReference Include="..\Botafe.Shared\Botafe.Shared.csproj" />
   </ItemGroup>
 
 </Project>

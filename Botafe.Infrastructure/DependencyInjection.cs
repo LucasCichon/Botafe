@@ -18,7 +18,7 @@ namespace Botafe.Infrastructure
         {
             services.AddTransient<IDateTime, DateTimeService>();
             services.AddTransient<IFileStore, FileStore.FileStore>();
-            services.AddTransient<IFileWrapper, IFileWrapper>();
+            services.AddTransient<IFileWrapper, FileWrapper>();
             services.AddTransient<IDirectoryWrapper, DirectoryWrapper>();
 
             return services;

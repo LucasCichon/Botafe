@@ -1,15 +1,23 @@
 ﻿@page "/eventOwner"
-@using BotafeFront.Models
+@using Botafe.Shared.VM
 @inject HttpClient Http
 
 <h3>EventOwners Detail</h3>
 <div class="card" style="width:18rem;">
     <div class="card-body">
-        <h5 class="card-title">@eventOwner.FirstName @eventOwner.LastName</h5>
+        <h5 id="test" class="card-title">@eventOwner.FirstName @eventOwner.LastName</h5>
         <p class="card-text">@eventOwner.Email</p>
         <a href="#" class="btn btn-primary">Edit or something</a>
     </div>
 </div>
+
+<script>
+    $("#test").onclick = function () { testFunc() };
+
+    function testFunc() {
+        alert("test");
+    }
+</script>
 
 @code {
     private EventOwnerDetailVm eventOwner;

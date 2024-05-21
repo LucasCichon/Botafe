@@ -19,6 +19,8 @@ namespace Botafe.Persistance
         public DbSet<EventOwner> EventOwners { get; set; }
         public DbSet<Participant> Participants { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<ParticipantAddress> ParticipantsAddress { get; set; }
+        public DbSet<EventOwnerAddress> EventOwnerAddresses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

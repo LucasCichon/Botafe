@@ -1,4 +1,5 @@
 
+using Botafe.Application;
 using Botafe.Infrastructure;
 using Botafe.Persistance;
 
@@ -11,6 +12,8 @@ namespace Botafe
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddApplication();
             builder.Services.AddPersistance(builder.Configuration);
             builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddCors(options => options.AddPolicy(name: "MyAllowSpecificOrigins",

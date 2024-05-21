@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Botafe.Application.EventOwners.Queries.GetDirectorDetail
+namespace Botafe.Application.EventOwners.Queries.GetEventOwnerDetail
 {
     public class GetEventOwnerDetailQuery : IRequest<EventOwnerDetailVm>
     {

@@ -13,6 +13,8 @@ namespace Botafe.Domain.Entities
         public int Id { get; set; }
         public EventOwnerName EventOwnerName { get; set; }
         public Email Email { get; set; }
+        public int? EventOwnerAddressId { get; set; }
+        public EventOwnerAddress? EventOwnerAddress { get; set; }
         public List<Event> Events { get; set; } = new();
 
     }

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Botafe.Application.Common.Interfaces;
+﻿using System.Reflection;
+using Botafe.Application.Common.Behaviors;
+using MediatR;
+using MediatR.Pipeline;
 using Microsoft.Extensions.DependencyInjection;
+using FluentValidation;
+using Botafe.Application.EventOwners.Commands.CreateEventOwner;
 
 namespace Botafe.Application
 {
@@ -12,6 +12,15 @@ namespace Botafe.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
+            services.AddMediatR(cfg => {
+                cfg.AddOpenRequestPreProcessor(typeof(LoggingBehaviour<>));
+                cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+                cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
+                cfg.AddOpenBehavior(typeof(PerformanceBehaviour<,>));
+                });
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
             return services;
         }
     }

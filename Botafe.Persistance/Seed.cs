@@ -12,13 +12,31 @@ namespace Botafe.Persistance
     {
         public static void SeedData(this ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<EventOwnerAddress>(a =>
+            {
+                a.HasData(new EventOwnerAddress()
+                {
+                    Id = 1
+                });
+                a.OwnsOne(ad => ad.Address).HasData(new
+                {
+                    City = "Opole",
+                    Country = "Polska",
+                    Postcode = "45-403",
+                    StreetName = "Ozimska",
+                    StreetNumber = "34/5a",
+                    Voivodeship = "Opolskie",
+                    EventOwnerAddressId = 1
+                });
+            });
             modelBuilder.Entity<EventOwner>(o =>
             {
                 o.HasData(new EventOwner()
                 {
                     Id = 1,
                     StatusId = 1,
-                    Created = DateTime.Now
+                    Created = DateTime.Now,
+                    EventOwnerAddressId = 1
                 });
                 o.OwnsOne(n => n.EventOwnerName).HasData(new { FirstName = "Łukasz", LastName = "Knieć", EventOwnerId = 1 });
                 o.OwnsOne(e => e.Email).HasData(new { UserName = "eventOwner1", DomainName = "gmail.com", EventOwnerId = 1 });

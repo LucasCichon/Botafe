@@ -19,7 +19,7 @@ namespace Botafe
 
             });
 
-            var filePath = Path.Combine(AppContext.BaseDirectory, "Botafe.xml");
+            var filePath = Path.Combine(AppContext.BaseDirectory, "Botafe.Api.xml");
             options.IncludeXmlComments(filePath);
         }
     }

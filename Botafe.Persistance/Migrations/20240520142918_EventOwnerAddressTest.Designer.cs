@@ -4,6 +4,7 @@ using Botafe.Persistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Botafe.Persistance.Migrations
 {
     [DbContext(typeof(BotafeDbContext))]
-    partial class BotafeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240520142918_EventOwnerAddressTest")]
+    partial class EventOwnerAddressTest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -176,7 +179,7 @@ namespace Botafe.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2024, 5, 20, 16, 31, 16, 218, DateTimeKind.Local).AddTicks(4075),
+                            Created = new DateTime(2024, 5, 20, 16, 29, 17, 967, DateTimeKind.Local).AddTicks(8855),
                             EventOwnerAddressId = 1,
                             StatusId = 1
                         });
@@ -250,7 +253,7 @@ namespace Botafe.Persistance.Migrations
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ParticipantAddressId")
+                    b.Property<int>("ParticipantAddressId")
                         .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
@@ -270,7 +273,7 @@ namespace Botafe.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2024, 5, 20, 16, 31, 16, 218, DateTimeKind.Local).AddTicks(5048),
+                            Created = new DateTime(2024, 5, 20, 16, 29, 17, 967, DateTimeKind.Local).AddTicks(9939),
                             ParticipantAddressId = 1,
                             PhoneNumber = "111222333",
                             StatusId = 1
@@ -479,7 +482,9 @@ namespace Botafe.Persistance.Migrations
                 {
                     b.HasOne("Botafe.Domain.Entities.ParticipantAddress", "ParticipantAddress")
                         .WithMany()
-                        .HasForeignKey("ParticipantAddressId");
+                        .HasForeignKey("ParticipantAddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.OwnsOne("Botafe.Domain.Entities.Email", "Email", b1 =>
                         {

@@ -9,6 +9,8 @@ namespace Botafe.Application.Common.Interfaces
         DbSet<EventOwner> EventOwners { get; set; }
         DbSet<Participant> Participants { get; set; }
         DbSet<Enrollment> Enrollments { get; set; }
+        DbSet<ParticipantAddress> ParticipantsAddress { get; set; }
+        DbSet<EventOwnerAddress> EventOwnerAddresses { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

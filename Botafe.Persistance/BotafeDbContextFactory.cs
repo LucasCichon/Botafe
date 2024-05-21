@@ -6,7 +6,10 @@ namespace Botafe.Persistance
     public class BotafeDbContextFactory : DesignTimeDbContextFactoryBase<BotafeDbContext>
     {
         private readonly IDateTime _dateTime;
-
+        public BotafeDbContextFactory()
+        {
+            
+        }
         public BotafeDbContextFactory(IDateTime dateTime)
         {
             _dateTime = dateTime;
